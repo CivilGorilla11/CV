@@ -3,124 +3,287 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>IPAKENG MOLEFI - Software Development Student</title>
+  <title>IPAKENG MOLEFI - Software Developer</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="wrapper">
+  <!-- Background Blobs -->
+  <div class ="bg-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>  <div class="wrapper">
 
+    <!--Cursor Follower -->
+    <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+    <!--Mobile Navigation -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+
+    <div class="wrapper">
     <!-- SIDEBAR -->
+   <!-- SIDEBAR -->
     <aside class="sidebar" id="sidebar">
-      <div class="menu-toggle" id="menuToggle">
-        <span></span>
-        <span></span>
-        <span></span>
+
+      <div class="profile-block">
+        <div class="avatar-ring">
+          <img src="your-photo.jpg" alt="Ipakeng Molefi" class="profile-photo"
+               onerror="this.src='https://ui-avatars.com/api/?name=Ipakeng+Molefi&background=00f2ff&color=0a0a0a&size=200&bold=true&font-size=0.4'" />
+          <div class="status-dot"></div>
+        </div>
+        <h1 class="name">Ipakeng<br><span>Molefi</span></h1>
+        <p class="role-badge"><span id="roleText"></span><span class="cursor-blink">|</span></p>
       </div>
 
-      <div class="sidebar-content" id="sidebarContent">
-        <div class="profile">
-          <img src="your-photo.jpg" alt="Ipakeng Molefi" class="profile-photo" />
-          <h1>Ipakeng Molefi</h1>
-          <p class="tagline">Software Development Student • Help Desk professional • Networking Intern</p>
-        </div>
+      <nav class="side-nav">
+        <a href="#about"    class="nav-item active" data-section="about">   <i class="fas fa-user"></i>     <span>About</span></a>
+        <a href="#skills"   class="nav-item"         data-section="skills">  <i class="fas fa-code"></i>     <span>Skills</span></a>
+        <a href="#education" class="nav-item"        data-section="education"><i class="fas fa-graduation-cap"></i><span>Education</span></a>
+        <a href="#certs"    class="nav-item"         data-section="certs">   <i class="fas fa-certificate"></i><span>Certs</span></a>
+        <a href="#contact"  class="nav-item"         data-section="contact"> <i class="fas fa-paper-plane"></i><span>Contact</span></a>
+      </nav>
 
-        <div class="section">
-          <h3><i class="fas fa-envelope"></i> Email</h3>
-          <p><a href="mailto:molefiipakeng11@gmail.com">molefiipakeng11@gmail.com</a></p>
+      <div class="sidebar-footer">
+        <div class="contact-chips">
+          <a href="mailto:molefiipakeng11@gmail.com" class="chip"><i class="fas fa-envelope"></i> molefiipakeng11@gmail.com</a>
+          <a href="tel:+27612002670" class="chip"><i class="fas fa-phone"></i> +27 61 200 2670</a>
+          <span class="chip loc"><i class="fas fa-map-marker-alt"></i> Ninapark, Gauteng</span>
         </div>
-
-        <div class="section">
-          <h3><i class="fas fa-phone"></i> Phone</h3>
-          <p>+27 61 200 2670</p>
-        </div>
-
-        <div class="section">
-          <h3><i class="fas fa-map-marker-alt"></i> Location</h3>
-          <p>Ninapark, Gauteng<br>Open to remote & relocation</p>
-          <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1797.8665140397788!2d28.147085477995514!3d-25.680143213472974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ebfd9a2db724f83%3A0xb0829e64a613d8b4!2s199%20Grafenheim%20St%2C%20Ninapark%2C%20Akasia%2C%200156!5e0!3m2!1sen!2sza!4v1764100399955!5m2!1sen!2sza" 
-                    width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-          </div>
-        </div>
-
-        <div class="section">
-          <h3>Connect</h3>
-          <div class="social-links">
-            <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-          </div>
-        </div>
-
-        <div class="section">
-          <h3>Core Skills</h3>
-          <ul class="skills-list">
-            <li>JavaScript</li>
-            <li>Basic Java</li>
-            <li>C#</li>
-            <li>HTML / CSS</li>
-            <li>Basic Linux & Networking</li>
-            <li>Help Desk & IT Support</li>
-            <li>DHCP • System Administration</li>
-          </ul>
-        </div>
-
-        <div class="section">
-          <h3>Languages</h3>
-          <p>English – Fluent</p>
+        <div class="social-row">
+          <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-btn" data-tip="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/yourusername" target="_blank"     class="social-btn" data-tip="GitHub"><i class="fab fa-github"></i></a>
+          <a href="mailto:molefiipakeng11@gmail.com"                   class="social-btn" data-tip="Email"><i class="fas fa-envelope"></i></a>
         </div>
       </div>
     </aside>
 
-    <!-- MAIN CONTENT -->
+    <!-- MAIN -->
     <main class="main-content">
 
-      <!-- About Me -->
-      <section class="section">
-        <h2>About Me</h2>
-        <div class="summary-container">
-          <div class="typewriter-wrapper">
-            <p class="summary typewriter-fixed">
-              Motivated Software Development student with a solid foundation in IT, backed by a completed Higher Certificate in IT Support Services (NQF 5).<br><br>
-              Currently pursuing a Diploma in Software Development (NQF 6) at IIE Rosebank College, I’m actively building full-stack skills in JavaScript, Java, C#, HTML, CSS, and relational databases while applying clean code principles and modern workflows (Git, Agile).<br><br>
-              With hands-on experience in troubleshooting complex systems, configuring networks, and delivering excellent end-user support, I bring a unique blend of technical support expertise and growing software engineering capabilities.<br><br>
-              Eager to contribute clean, efficient code and a problem-solving mindset as a software development intern while continuing to learn from experienced teams to become the best IT professional I can be. Ready to make an immediate impact on real-world projects in the industry.
-            </p>
+      <!-- ABOUT -->
+      <section class="section fade-up" id="about">
+        <div class="section-header">
+          <span class="section-label">01 / 04</span>
+          <h2>About Me</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card glass">
+            <p>Motivated <strong>Software Development student</strong> with a solid foundation in IT, backed by a completed Higher Certificate in IT Support Services (NQF 5).</p>
+            <p>Currently pursuing a <strong>Diploma in Software Development (NQF 6)</strong> at IIE Rosebank College — building full-stack skills across JavaScript, Java, C#, HTML, CSS, and relational databases with Git and Agile workflows.</p>
+            <p>I bring hands-on experience in troubleshooting complex systems, configuring networks, and delivering excellent end-user support, combining <strong>IT support expertise with growing software engineering capabilities</strong>.</p>
+            <p>Eager to contribute clean, efficient code and a problem-solving mindset as a software development intern. Ready to make an immediate impact on real-world projects.</p>
+          </div>
+
+          <div class="stat-grid">
+            <div class="stat-card glass" data-count="3" data-suffix="+">
+              <span class="stat-num">0</span>
+              <span class="stat-suffix">+</span>
+              <p>Years in IT</p>
+            </div>
+            <div class="stat-card glass" data-count="7" data-suffix="+">
+              <span class="stat-num">0</span>
+              <span class="stat-suffix">+</span>
+              <p>Tech Skills</p>
+            </div>
+            <div class="stat-card glass" data-count="2" data-suffix="">
+              <span class="stat-num">0</span>
+              <span class="stat-suffix"></span>
+              <p>Qualifications</p>
+            </div>
+            <div class="stat-card glass" data-count="100" data-suffix="%">
+              <span class="stat-num">0</span>
+              <span class="stat-suffix">%</span>
+              <p>Committed</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Education -->
-      <section class="section" id="education">
-        <h2>Education</h2>
-        <div class="education-container">
-          <div class="education-card">
-            <h3>Diploma in Software Development (NQF 6)</h3>
-            <p class="institution">IIE Rosebank College, Pretoria CBD</p>
-            <p class="years">2025 – 2027 (In Progress)</p>
-            <p class="details">Full-Stack Development • JavaScript • Java • Databases • Agile</p>
-          </div>
+      <!-- SKILLS -->
+      <section class="section fade-up" id="skills">
+        <div class="section-header">
+          <span class="section-label">02 / 04</span>
+          <h2>Skills</h2>
+        </div>
 
-          <div class="education-card">
-            <h3>Higher Certificate in IT Support Services (NQF 5)</h3>
-            <p class="institution">IIE Rosebank College, Pretoria CBD</p>
-            <p class="years">2022 – 2023</p>
-            <p class="details">Hardware • Networking • System Admin • End-User Support • Project Management</p>
+        <div class="skills-tabs">
+          <button class="tab-btn active" data-tab="dev">Development</button>
+          <button class="tab-btn"        data-tab="it">IT Support</button>
+          <button class="tab-btn"        data-tab="tools">Tools</button>
+        </div>
+
+        <div class="tab-content active" id="tab-dev">
+          <div class="skill-bars">
+            <div class="skill-bar-row" data-level="70">
+              <div class="skill-info"><span>JavaScript</span><span class="pct">70%</span></div>
+              <div class="bar-track"><div class="bar-fill"></div></div>
+            </div>
+            <div class="skill-bar-row" data-level="60">
+              <div class="skill-info"><span>HTML / CSS</span><span class="pct">60%</span></div>
+              <div class="bar-track"><div class="bar-fill"></div></div>
+            </div>
+            <div class="skill-bar-row" data-level="45">
+              <div class="skill-info"><span>Java</span><span class="pct">45%</span></div>
+              <div class="bar-track"><div class="bar-fill"></div></div>
+            </div>
+            <div class="skill-bar-row" data-level="50">
+              <div class="skill-info"><span>C#</span><span class="pct">50%</span></div>
+              <div class="bar-track"><div class="bar-fill"></div></div>
+            </div>
+            <div class="skill-bar-row" data-level="55">
+              <div class="skill-info"><span>SQL / Databases</span><span class="pct">55%</span></div>
+              <div class="bar-track"><div class="bar-fill"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-content" id="tab-it">
+          <div class="skill-tags">
+            <span class="stag">Help Desk & IT Support</span>
+            <span class="stag">DHCP Configuration</span>
+            <span class="stag">System Administration</span>
+            <span class="stag">Network Troubleshooting</span>
+            <span class="stag">Hardware Diagnostics</span>
+            <span class="stag">End-User Support</span>
+            <span class="stag">Linux Basics</span>
+          </div>
+        </div>
+
+        <div class="tab-content" id="tab-tools">
+          <div class="skill-tags">
+            <span class="stag"><i class="fab fa-git-alt"></i> Git</span>
+            <span class="stag"><i class="fab fa-github"></i> GitHub</span>
+            <span class="stag">Agile / Scrum</span>
+            <span class="stag">VS Code</span>
+            <span class="stag">Terminal / CLI</span>
+            <span class="stag">Project Management</span>
           </div>
         </div>
       </section>
 
-      <!-- Certifications -->
-      <section class="section">
-        <h2>Certifications</h2>
-        <ul class="certifications">
-          <li>A+ Certification (In Progress)</li>
-          <li>Google IT Support Professional Certificate (Planned)</li>
-        </ul>
+      <!-- EDUCATION -->
+      <section class="section fade-up" id="education">
+        <div class="section-header">
+          <span class="section-label">03 / 04</span>
+          <h2>Education</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="tl-line"></div>
+
+          <div class="tl-item">
+            <div class="tl-dot"><i class="fas fa-laptop-code"></i></div>
+            <div class="tl-card glass">
+              <span class="tl-year">2025 – 2027</span>
+              <h3>Diploma in Software Development</h3>
+              <p class="tl-school"><i class="fas fa-university"></i> IIE Rosebank College, Pretoria CBD</p>
+              <span class="tl-badge">NQF Level 6</span>
+              <p class="tl-desc">Full-Stack Development · JavaScript · Java · Databases · Agile Methodologies</p>
+              <div class="progress-ring-wrap">
+                <svg class="progress-ring" viewBox="0 0 60 60">
+                  <circle class="ring-bg" cx="30" cy="30" r="24"/>
+                  <circle class="ring-fill" cx="30" cy="30" r="24" data-pct="33"/>
+                </svg>
+                <span class="ring-label">Yr 1/3</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot completed"><i class="fas fa-check"></i></div>
+            <div class="tl-card glass">
+              <span class="tl-year">2022 – 2023</span>
+              <h3>Higher Certificate in IT Support Services</h3>
+              <p class="tl-school"><i class="fas fa-university"></i> IIE Rosebank College, Pretoria CBD</p>
+              <span class="tl-badge completed">NQF Level 5 · Completed ✓</span>
+              <p class="tl-desc">Hardware · Networking · System Administration · End-User Support · Project Management</p>
+            </div>
+          </div>
+        </div>
       </section>
 
+      <!-- CERTIFICATIONS -->
+      <section class="section fade-up" id="certs">
+        <div class="section-header">
+          <span class="section-label">04 / 04</span>
+          <h2>Certifications</h2>
+        </div>
+
+        <div class="cert-grid">
+          <div class="cert-card glass">
+            <div class="cert-icon in-progress"><i class="fas fa-tools"></i></div>
+            <div class="cert-info">
+              <h3>CompTIA A+</h3>
+              <p>Industry-standard hardware & software certification</p>
+              <span class="cert-status in-progress">In Progress</span>
+            </div>
+            <div class="cert-progress">
+              <svg viewBox="0 0 36 36" class="circular-chart">
+                <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                <path class="circle" data-pct="40" stroke-dasharray="60, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                <text x="18" y="20.35" class="percentage">60%</text>
+              </svg>
+            </div>
+          </div>
+
+          <div class="cert-card glass">
+            <div class="cert-icon planned"><i class="fab fa-google"></i></div>
+            <div class="cert-info">
+              <h3>Google IT Support Professional</h3>
+              <p>Google-backed IT fundamentals certificate via Coursera</p>
+              <span class="cert-status planned">Planned</span>
+            </div>
+            <div class="cert-progress">
+              <svg viewBox="0 0 36 36" class="circular-chart">
+                <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                <path class="circle planned-circle" data-pct="10" stroke-dasharray="10, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                <text x="18" y="20.35" class="percentage">–</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section fade-up" id="contact">
+        <div class="section-header">
+          <span class="section-label">Let's Talk</span>
+          <h2>Get in Touch</h2>
+        </div>
+        <div class="contact-grid">
+          <a href="mailto:molefiipakeng11@gmail.com" class="contact-card glass">
+            <i class="fas fa-envelope"></i>
+            <span>molefiipakeng11@gmail.com</span>
+          </a>
+          <a href="tel:+27612002670" class="contact-card glass">
+            <i class="fas fa-phone"></i>
+            <span>+27 61 200 2670</span>
+          </a>
+          <span class="contact-card glass loc">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Ninapark, Gauteng<br><small>Open to remote & relocation</small></span>
+          </span>
+          <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-card glass">
+            <i class="fab fa-linkedin"></i>
+            <span>LinkedIn Profile</span>
+          </a>
+        </div>
+        <div class="map-container glass">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1797.8665140397788!2d28.147085477995514!3d-25.680143213472974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ebfd9a2db724f83%3A0xb0829e64a613d8b4!2s199%20Grafenheim%20St%2C%20Ninapark%2C%20Akasia%2C%200156!5e0!3m2!1sen!2sza!4v1764100399955!5m2!1sen!2sza"
+                  width="100%" height="260" style="border:0;border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>Crafted with <span style="color:var(--neon)">🧠</span> by Ipakeng Molefi · <span id="year"></span></p>
+      </footer>
     </main>
   </div>
 
