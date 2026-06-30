@@ -35,8 +35,10 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ─── ROLE TYPEWRITER ─── */
   const roles = [
     "Software Dev Student",
+    "AV Production Assistant",
     "Help Desk Pro",
     "Networking Intern",
+    "Live Stream Operator",
     "Future Full-Stack Dev"
   ];
   let ri = 0, ci = 0, deleting = false;
@@ -161,8 +163,9 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("tab-" + btn.dataset.tab).classList.add("active");
  
       // animate bars on tab switch
-      if (btn.dataset.tab === "dev") {
-        document.querySelectorAll(".skill-bar-row[data-level]").forEach(row => {
+      if (btn.dataset.tab === "dev" || btn.dataset.tab === "production") {
+       const selector = btn.dataset.tab === "production" ? ".prod-bar" : ".skill-bar-row:not(.prod-bar)";
+        document.querySelectorAll(selector + "[data-level]").forEach(row => {
           const fill = row.querySelector(".bar-fill");
           fill.style.width = "0%";
           setTimeout(() => { fill.style.width = row.dataset.level + "%"; }, 50);
